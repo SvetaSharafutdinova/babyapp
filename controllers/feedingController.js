@@ -1,4 +1,4 @@
-const feedingABL = require('/Users/makar0ff/babyapp/ABL/feedingABl.js');
+const feedingABL = require('/Users/makar0ff/babyapp/ABL/feedingABL.js');
 
 exports.recordFeeding = async (req, res) => {
   const { date, foodType, quantity } = req.body;
