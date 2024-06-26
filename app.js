@@ -39,6 +39,8 @@ app.use('/growth', validate(require('./schema/growth.schema')), growthRoutes);
 app.use('/dashboard', dashboardRoutes);
 app.use('/history', historyRoutes);
 
+
+
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
