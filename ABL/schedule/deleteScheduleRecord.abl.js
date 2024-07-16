@@ -1,4 +1,4 @@
-const scheduleDAO = require("../../dao/schedule.dao");
+const scheduleDAO = require("../../DAO/schedule.dao");
 
 async function deleteScheduleRecord(req, res) {
   const { index } = req.params;

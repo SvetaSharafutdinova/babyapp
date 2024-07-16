@@ -1,4 +1,4 @@
-const sleepDAO = require("../../dao/sleep.dao");
+const sleepDAO = require("../../DAO/sleep.dao");
 
 async function deleteSleepRecord(req, res) {
   const { index } = req.params;

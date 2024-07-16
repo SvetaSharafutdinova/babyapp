@@ -1,4 +1,4 @@
-const sleepDAO = require("../../dao/sleep.dao");
+const sleepDAO = require("../../DAO/sleep.dao");
 
 async function createSleepRecord(req, res) {
   const { date, duration } = req.body;

@@ -1,4 +1,4 @@
-const growthDAO = require("../../dao/growth.dao");
+const growthDAO = require("../../DAO/growth.dao");
 
 async function fetchGrowthRecords(req, res) {
   try {

@@ -1,4 +1,4 @@
-const conditionDAO = require("../../dao/condition.dao");
+const conditionDAO = require("../../DAO/condition.dao");
 
 async function deleteConditionRecord(req, res) {
   const { index } = req.params;

@@ -1,4 +1,4 @@
-const scheduleDAO = require("../../dao/schedule.dao");
+const scheduleDAO = require("../../DAO/schedule.dao");
 
 async function createScheduleRecord(req, res) {
   const { date, activity } = req.body;

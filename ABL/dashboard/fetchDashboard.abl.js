@@ -1,4 +1,4 @@
-const dashboardDAO = require("../../dao/dashboard.dao");
+const dashboardDAO = require("../../DAO/dashboard.dao");
 
 async function fetchDashboard(req, res) {
   try {

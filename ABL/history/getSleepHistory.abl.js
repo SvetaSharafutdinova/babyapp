@@ -1,4 +1,4 @@
-const historyDAO = require("../../dao/history.dao");
+const historyDAO = require("../../DAO/history.dao");
 
 async function getSleepHistory(req, res) {
   try {
