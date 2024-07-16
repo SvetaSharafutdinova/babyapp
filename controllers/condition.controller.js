@@ -1,9 +1,9 @@
 const ajv = require('../utils/ajv.util');
 const conditionSchema = require('../schema/condition.schema');
-const createConditionRecord = require('../abl/condition/createConditionRecord.abl');
-const fetchConditionRecords = require('../abl/condition/fetchConditionRecords.abl');
-const updateConditionRecord = require('../abl/condition/updateConditionRecord.abl');
-const deleteConditionRecord = require('../abl/condition/deleteConditionRecord.abl');
+const createConditionRecord = require('../ABL/condition/createConditionRecord.abl');
+const fetchConditionRecords = require('../ABL/condition/fetchConditionRecords.abl');
+const updateConditionRecord = require('../ABL/condition/updateConditionRecord.abl');
+const deleteConditionRecord = require('../ABL/condition/deleteConditionRecord.abl');
 
 const validate = ajv.compile(conditionSchema);
 

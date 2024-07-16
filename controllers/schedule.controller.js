@@ -1,9 +1,9 @@
 const ajv = require('../utils/ajv.util');
 const scheduleSchema = require('../schema/schedule.schema');
-const createScheduleRecord = require('../abl/schedule/createScheduleRecord.abl');
-const fetchScheduleRecords = require('../abl/schedule/fetchScheduleRecords.abl');
-const updateScheduleRecord = require('../abl/schedule/updateScheduleRecord.abl');
-const deleteScheduleRecord = require('../abl/schedule/deleteScheduleRecord.abl');
+const createScheduleRecord = require('../ABL/schedule/createScheduleRecord.abl');
+const fetchScheduleRecords = require('../ABL/schedule/fetchScheduleRecords.abl');
+const updateScheduleRecord = require('../ABL/schedule/updateScheduleRecord.abl');
+const deleteScheduleRecord = require('../ABL/schedule/deleteScheduleRecord.abl');
 
 const validate = ajv.compile(scheduleSchema);
 

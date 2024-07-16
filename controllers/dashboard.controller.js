@@ -1,4 +1,4 @@
-const fetchDashboard = require('../abl/dashboard/fetchDashboard.abl');
+const fetchDashboard = require('../ABL/dashboard/fetchDashboard.abl');
 
 exports.getDashboardData = async (req, res) => {
   try {

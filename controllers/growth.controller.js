@@ -1,9 +1,9 @@
 const ajv = require('../utils/ajv.util');
 const growthSchema = require('../schema/growth.schema');
-const createGrowthRecord = require('../abl/growth/createGrowthRecord.abl');
-const fetchGrowthRecords = require('../abl/growth/fetchGrowthRecords.abl');
-const updateGrowthRecord = require('../abl/growth/updateGrowthRecord.abl');
-const deleteGrowthRecord = require('../abl/growth/deleteGrowthRecord.abl');
+const createGrowthRecord = require('../ABL/growth/createGrowthRecord.abl');
+const fetchGrowthRecords = require('../ABL/growth/fetchGrowthRecords.abl');
+const updateGrowthRecord = require('../ABL/growth/updateGrowthRecord.abl');
+const deleteGrowthRecord = require('../ABL/growth/deleteGrowthRecord.abl');
 
 const validate = ajv.compile(growthSchema);
 
