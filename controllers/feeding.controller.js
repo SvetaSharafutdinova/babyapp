@@ -1,9 +1,9 @@
 const ajv = require('../utils/ajv.util');
 const feedingSchema = require('../schema/feeding.schema');
-const createFeedingRecord = require('../abl/feeding/createFeedingRecord.abl');
-const fetchFeedingRecords = require('../abl/feeding/fetchFeedingRecords.abl');
-const updateFeedingRecord = require('../abl/feeding/updateFeedingRecord.abl');
-const deleteFeedingRecord = require('../abl/feeding/deleteFeedingRecord.abl');
+const createFeedingRecord = require('../ABL/feeding/createFeedingRecord.abl');
+const fetchFeedingRecords = require('../ABL/feeding/fetchFeedingRecords.abl');
+const updateFeedingRecord = require('../ABL/feeding/updateFeedingRecord.abl');
+const deleteFeedingRecord = require('../ABL/feeding/deleteFeedingRecord.abl');
 
 const validate = ajv.compile(feedingSchema);
 
