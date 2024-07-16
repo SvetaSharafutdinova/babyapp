@@ -1,4 +1,4 @@
-const feedingDAO = require("../../dao/feeding.dao");
+const feedingDAO = require("../../DAO/feeding.dao");
 
 async function createFeedingRecord(req, res) {
   const { date, foodType, quantity } = req.body;

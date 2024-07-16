@@ -1,4 +1,4 @@
-const feedingDAO = require("../../dao/feeding.dao");
+const feedingDAO = require("../../DAO/feeding.dao");
 
 async function deleteFeedingRecord(req, res) {
   const { index } = req.params;
