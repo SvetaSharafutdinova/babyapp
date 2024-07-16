@@ -1,7 +1,5 @@
-const ajv = require('../utils/ajv.util');
-
 const conditionSchema = {
-    type: "object",
+  type: "object",
   properties: {
     date: { type: "string", format: "date-time" },
     condition: { type: "string" },
@@ -11,4 +9,4 @@ const conditionSchema = {
   additionalProperties: false
 };
 
-module.exports = ajv.compile(conditionSchema);
+module.exports = conditionSchema;

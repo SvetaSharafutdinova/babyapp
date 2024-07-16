@@ -1,7 +1,13 @@
-const Ajv = require('ajv');
-const addFormats = require('ajv-formats');
+const Ajv = require("ajv").default;
+const addFormats = require("ajv-formats");
 
-const ajv = new Ajv();
+const ajv = new Ajv({
+  allErrors: true,
+  useDefaults: true,
+  coerceTypes: true,
+  removeAdditional: true
+});
+
 addFormats(ajv);
 
 module.exports = ajv;

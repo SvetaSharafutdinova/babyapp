@@ -1,15 +1,13 @@
-const ajv = require('../utils/ajv.util');
-
 const growthSchema = {
-    type: 'object',
+    type: "object",
     properties: {
-        date: { type: 'string', format: 'date-time' },
-        value: { type: 'number', minimum: 0 },
-        unit: { type: 'string' },
-        notes: { type: 'string' },
+      date: { type: "string", format: "date-time" },
+      height: { type: "number", minimum: 0 },
+      weight: { type: "number", minimum: 0 }
     },
-    required: ['date', 'value', 'unit'],
-    additionalProperties: false,
-};
-
-module.exports = ajv.compile(growthSchema);
+    required: ["date", "height", "weight"],
+    additionalProperties: false
+  };
+  
+  module.exports = growthSchema;
+  

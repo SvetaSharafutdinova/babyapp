@@ -1,14 +1,13 @@
-const ajv = require('../utils/ajv.util');
-
 const feedingSchema = {
-    type: 'object',
+    type: "object",
     properties: {
-        date: { type: 'string', format: 'date' },
-        foodType: { type: 'string', minLength: 1 },
-        quantity: { type: 'number', minimum: 0 },
+      date: { type: "string", format: "date-time" },
+      foodType: { type: "string" },
+      quantity: { type: "number", minimum: 0 }
     },
-    required: ['date', 'foodType', 'quantity'],
-    additionalProperties: false,
-};
-
-module.exports = ajv.compile(feedingSchema);
+    required: ["date", "foodType", "quantity"],
+    additionalProperties: false
+  };
+  
+  module.exports = feedingSchema;
+  
