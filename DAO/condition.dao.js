@@ -1,5 +1,6 @@
 const fs = require("fs/promises");
 const path = require("path");
+const { v4: uuidv4 } = require("uuid");
 
 const DEFAULT_DATA_PATH = path.join(__dirname, "..", "data", "condition.json");
 
@@ -10,6 +11,7 @@ class ConditionDao {
 
   async createConditionRecord(conditionRecord) {
     const conditionRecords = await this._loadConditionRecords();
+    conditionRecord.id = uuidv4();
     conditionRecords.push(conditionRecord);
 
     await fs.writeFile(this.conditionDataPath, JSON.stringify(conditionRecords, null, 2));
@@ -29,25 +31,27 @@ class ConditionDao {
     }
   }
 
-  async updateConditionRecord(index, updatedRecord) {
+  async updateConditionRecord(id, updatedRecord) {
     const conditionRecords = await this._loadConditionRecords();
-    if (index >= 0 && index < conditionRecords.length) {
-      conditionRecords[index] = updatedRecord;
+    const index = conditionRecords.findIndex(record => record.id === id);
+    if (index !== -1) {
+      conditionRecords[index] = { ...conditionRecords[index], ...updatedRecord };
       await fs.writeFile(this.conditionDataPath, JSON.stringify(conditionRecords, null, 2));
       return conditionRecords[index];
     } else {
-      throw new Error("Invalid index");
+      throw new Error("Record not found");
     }
   }
 
-  async deleteConditionRecord(index) {
+  async deleteConditionRecord(id) {
     const conditionRecords = await this._loadConditionRecords();
-    if (index >= 0 && index < conditionRecords.length) {
+    const index = conditionRecords.findIndex(record => record.id === id);
+    if (index !== -1) {
       const deletedRecord = conditionRecords.splice(index, 1);
       await fs.writeFile(this.conditionDataPath, JSON.stringify(conditionRecords, null, 2));
       return deletedRecord;
     } else {
-      throw new Error("Invalid index");
+      throw new Error("Record not found");
     }
   }
 }

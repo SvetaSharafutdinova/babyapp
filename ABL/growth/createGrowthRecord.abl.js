@@ -1,13 +1,13 @@
 const growthDAO = require("../../DAO/growth.dao");
 
 async function createGrowthRecord(req, res) {
-  const { date, height, weight } = req.body;
+  const { date, weight, height } = req.body;
 
-  if (!date || height === undefined || weight === undefined) {
-    return res.status(400).json({ error: "Date, height, and weight are required" });
+  if (!date || !weight || !height) {
+    return res.status(400).json({ error: "Date, weight, and height are required" });
   }
 
-  const growthRecord = { date, height, weight };
+  const growthRecord = { date, weight, height };
 
   try {
     const newGrowthRecord = await growthDAO.createGrowthRecord(growthRecord);
@@ -18,3 +18,4 @@ async function createGrowthRecord(req, res) {
 }
 
 module.exports = createGrowthRecord;
+

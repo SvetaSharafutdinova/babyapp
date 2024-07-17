@@ -50,7 +50,6 @@ app.use('/sleep', sleepRoutes);
 app.use('/condition', conditionRoutes);
 app.use('/schedule', scheduleRoutes);
 app.use('/growth', growthRoutes);
-
 app.use('/dashboard', dashboardRoutes);
 app.use('/history', historyRoutes);
 

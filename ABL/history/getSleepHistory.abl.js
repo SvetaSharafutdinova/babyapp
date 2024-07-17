@@ -2,7 +2,7 @@ const historyDAO = require("../../DAO/history.dao");
 
 async function getSleepHistory(req, res) {
   try {
-    const records = await historyDAO.getSleepHistory();
+    const records = await historyDAO.fetchSleepHistory();
     res.json(records);
   } catch (error) {
     res.status(500).json({ error: error.message });

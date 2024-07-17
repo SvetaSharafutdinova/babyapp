@@ -10,3 +10,5 @@ async function fetchGrowthRecords(req, res) {
 }
 
 module.exports = fetchGrowthRecords;
+
+

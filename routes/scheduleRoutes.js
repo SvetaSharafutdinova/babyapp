@@ -4,7 +4,7 @@ const scheduleController = require('../controllers/schedule.controller');
 
 router.post('/create', scheduleController.recordSchedule);
 router.get('/records', scheduleController.fetchScheduleRecords);
-router.delete('/record/:index', scheduleController.deleteScheduleRecord);
-router.put('/record/:index', scheduleController.updateScheduleRecord);
+router.delete('/record/:id', scheduleController.deleteScheduleRecord);
+router.put('/record/:id', scheduleController.updateScheduleRecord);
 
 module.exports = router;

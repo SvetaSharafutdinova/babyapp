@@ -1,44 +1,28 @@
-const fs = require("fs/promises");
-const path = require("path");
-
-const SLEEP_DATA_PATH = path.join(__dirname, "..", "data", "sleep.json");
-const FEEDING_DATA_PATH = path.join(__dirname, "..", "data", "feeding.json");
-const CONDITION_DATA_PATH = path.join(__dirname, "..", "data", "condition.json");
-const GROWTH_DATA_PATH = path.join(__dirname, "..", "data", "growth.json");
-const SCHEDULE_DATA_PATH = path.join(__dirname, "..", "data", "schedule.json");
+const sleepDAO = require("./sleep.dao");
+const feedingDAO = require("./feeding.dao");
+const conditionDAO = require("./condition.dao");
+const growthDAO = require("./growth.dao");
+const scheduleDAO = require("./schedule.dao");
 
 class HistoryDao {
-  async getSleepHistory() {
-    return await this._loadRecords(SLEEP_DATA_PATH);
+  async fetchSleepHistory() {
+    return await sleepDAO._loadSleepRecords();
   }
 
-  async getFeedingHistory() {
-    return await this._loadRecords(FEEDING_DATA_PATH);
+  async fetchFeedingHistory() {
+    return await feedingDAO._loadFeedingRecords();
   }
 
-  async getConditionHistory() {
-    return await this._loadRecords(CONDITION_DATA_PATH);
+  async fetchConditionHistory() {
+    return await conditionDAO._loadConditionRecords();
   }
 
-  async getGrowthHistory() {
-    return await this._loadRecords(GROWTH_DATA_PATH);
+  async fetchGrowthHistory() {
+    return await growthDAO._loadGrowthRecords();
   }
 
-  async getScheduleHistory() {
-    return await this._loadRecords(SCHEDULE_DATA_PATH);
-  }
-
-  async _loadRecords(filePath) {
-    try {
-      const data = await fs.readFile(filePath, "utf8");
-      return JSON.parse(data);
-    } catch (error) {
-      if (error.code === 'ENOENT') {
-        return [];
-      } else {
-        throw error;
-      }
-    }
+  async fetchScheduleHistory() {
+    return await scheduleDAO._loadScheduleRecords();
   }
 }
 

@@ -1,25 +1,45 @@
-const getSleepHistory = require('../ABL/history/getSleepHistory.abl');
-const getFeedingHistory = require('../ABL/history/getFeedingHistory.abl');
 const getConditionHistory = require('../ABL/history/getConditionHistory.abl');
+const getFeedingHistory = require('../ABL/history/getFeedingHistory.abl');
+const getSleepHistory = require('../ABL/history/getSleepHistory.abl');
 const getGrowthHistory = require('../ABL/history/getGrowthHistory.abl');
 const getScheduleHistory = require('../ABL/history/getScheduleHistory.abl');
 
-exports.getSleepHistory = async (req, res) => {
-  await getSleepHistory(req, res);
+exports.fetchConditionHistory = async (req, res) => {
+  try {
+    await getConditionHistory(req, res);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
 };
 
-exports.getFeedingHistory = async (req, res) => {
-  await getFeedingHistory(req, res);
+exports.fetchFeedingHistory = async (req, res) => {
+  try {
+    await getFeedingHistory(req, res);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
 };
 
-exports.getConditionHistory = async (req, res) => {
-  await getConditionHistory(req, res);
+exports.fetchSleepHistory = async (req, res) => {
+  try {
+    await getSleepHistory(req, res);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
 };
 
-exports.getGrowthHistory = async (req, res) => {
-  await getGrowthHistory(req, res);
+exports.fetchGrowthHistory = async (req, res) => {
+  try {
+    await getGrowthHistory(req, res);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
 };
 
-exports.getScheduleHistory = async (req, res) => {
-  await getScheduleHistory(req, res);
+exports.fetchScheduleHistory = async (req, res) => {
+  try {
+    await getScheduleHistory(req, res);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
 };

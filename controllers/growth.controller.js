@@ -33,7 +33,7 @@ exports.deleteGrowthRecord = async (req, res) => {
   try {
     await deleteGrowthRecord(req, res);
   } catch (error) {
-    res.status  (500).json({ error: error.message });
+    res.status(500).json({ error: error.message });
   }
 };
 

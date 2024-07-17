@@ -1,10 +1,11 @@
 const ajv = require('../utils/ajv.util');
 const sleepSchema = require('../schema/sleepSchema');
 const createSleepRecord = require('../ABL/sleep/createSleepRecord.abl');
-const updateSleepRecord = require('../ABL/sleep/updateSleepRecord.abl');
 const fetchSleepRecords = require('../ABL/sleep/fetchSleepRecords.abl');
+const updateSleepRecord = require('../ABL/sleep/updateSleepRecord.abl');
 const deleteSleepRecord = require('../ABL/sleep/deleteSleepRecord.abl');
 
+// Компиляция схемы
 const validate = ajv.compile(sleepSchema);
 
 exports.recordSleep = async (req, res) => {

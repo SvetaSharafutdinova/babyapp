@@ -10,3 +10,4 @@ async function fetchScheduleRecords(req, res) {
 }
 
 module.exports = fetchScheduleRecords;
+

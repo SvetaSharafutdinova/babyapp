@@ -1,13 +1,13 @@
 const conditionDAO = require("../../DAO/condition.dao");
 
 async function createConditionRecord(req, res) {
-  const { date, condition, notes } = req.body;
+  const { date, condition } = req.body;
 
   if (!date || !condition) {
     return res.status(400).json({ error: "Date and condition are required" });
   }
 
-  const conditionRecord = { date, condition, notes };
+  const conditionRecord = { date, condition };
 
   try {
     const newConditionRecord = await conditionDAO.createConditionRecord(conditionRecord);
