@@ -12,7 +12,7 @@ const historyRoutes = require('./routes/historyRoutes');
 const dashboardRoutes = require('./routes/dashboardRoutes');
 
 const app = express();
-const PORT = process.env.PORT || 3006;
+const PORT = process.env.PORT || 3000;
 
 app.use(expressSanitizer());
 app.use(bodyParser.json());
